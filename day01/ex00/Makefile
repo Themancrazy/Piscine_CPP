@@ -6,12 +6,12 @@
 #    By: anjansse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/28 21:57:22 by anjansse          #+#    #+#              #
-#    Updated: 2019/06/22 09:18:14 by anjansse         ###   ########.fr        #
+#    Updated: 2019/07/15 14:27:40 by anjansse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Pony
-GENERAL		= main.cpp pony.cpp
+NAME		= pony
+GENERAL		= Pony.cpp main.cpp
 
 SRCS		= $(GENERAL)
 
@@ -40,6 +40,6 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "\t\n\x1b[96mPony's \x1b[91mlibrary has been cleaned!\x1b[0m\n"
+	@echo "\t\n\x1b[96mASM \x1b[91mlibrary has been cleaned!\x1b[0m\n"
 
 re: fclean all
