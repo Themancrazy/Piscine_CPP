@@ -9,9 +9,22 @@ class ClapTrap {
         unsigned int armor);
         ClapTrap(const ClapTrap &cpy);
         ~ClapTrap(void);
+
+        ClapTrap        &operator=(const ClapTrap &r);
+
         void            takeDamage(unsigned int amount);
         void            beRepaired(unsigned int amount);
 
+        std::string     getName(void);
+        unsigned int    getHp(void);
+        unsigned int    getMaxHp(void);
+        unsigned int    getEp(void);
+        unsigned int    getMaxEp(void);
+        unsigned int    getLevel(void);
+        unsigned int    getMeleeDmg(void);
+        unsigned int    getRangeDmg(void);
+        unsigned int    getArmor(void);
+        
     protected:
         std::string     _name;
         unsigned int    _hp;

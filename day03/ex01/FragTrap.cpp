@@ -41,6 +41,21 @@ FragTrap::~FragTrap(void) {
     std::cout << "<FR4G-TP> Why am I.. hgrrrghh... dying... hrrggh.. a virgin... AGAIN...<LARGE EXPLOSION>" << std::endl;
 }
 
+/*-----------------------------OVERLOADING ---------------------------------------- */
+
+FragTrap        &FragTrap::operator=(const FragTrap &r) {
+    this->_name = r._name;
+    this->_hp = r._hp;
+    this->_maxHp = r._maxHp;
+    this->_energyPoints = r._energyPoints;
+    this->_maxEp = r._maxEp;
+    this->_rangedDmg = r._rangedDmg;
+    this->_meleeDmg = r._meleeDmg;
+    this->_level = r._level;
+    this->_armor = r._armor;
+    return *this;
+}
+
 /* ----------------------------ATTACKS------------------------------------*/
 
 void            FragTrap::vaulthunter_dot_exe(std::string const & target) {
@@ -87,4 +102,42 @@ void            FragTrap::beRepaired(unsigned int amount) {
         *screams* HELL YAAAHHHH I'M BACK IN THE GAME NOW LOSERS!!" << std::endl;
         this->_hp += amount;
     }
+}
+
+/* -------------------------GET STATS---------------------------------- */
+
+std::string     FragTrap::getName(void) {
+    return (this->_name);
+}
+
+unsigned int    FragTrap::getHp(void) {
+    return (this->_hp);
+}
+
+unsigned int    FragTrap::getMaxHp(void) {
+    return (this->_maxHp);
+}
+
+unsigned int    FragTrap::getEp(void) {
+    return (this->_energyPoints);
+}
+
+unsigned int    FragTrap::getMaxEp(void) {
+    return (this->_maxEp);
+}
+
+unsigned int    FragTrap::getLevel(void) {
+    return (this->_level);
+}
+
+unsigned int    FragTrap::getMeleeDmg(void) {
+    return (this->_meleeDmg);
+}
+
+unsigned int    FragTrap::getRangeDmg(void) {
+    return (this->_rangedDmg);
+}
+
+unsigned int    FragTrap::getArmor(void) {
+    return (this->_armor);
 }

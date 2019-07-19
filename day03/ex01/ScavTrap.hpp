@@ -17,6 +17,16 @@ class ScavTrap {
         void            takeDamage(unsigned int amount);
         void            beRepaired(unsigned int amount);
 
+        std::string     getName(void);
+        unsigned int    getHp(void);
+        unsigned int    getMaxHp(void);
+        unsigned int    getEp(void);
+        unsigned int    getMaxEp(void);
+        unsigned int    getLevel(void);
+        unsigned int    getMeleeDmg(void);
+        unsigned int    getRangeDmg(void);
+        unsigned int    getArmor(void);
+        
     private:
         std::string     _name;
         unsigned int    _hp;

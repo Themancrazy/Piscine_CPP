@@ -1,5 +1,9 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#define RED "\x1b[91m"
+#define BOLD "\x1b[1m"
+#define PURPLE "\x1b[94m"
+#define RESET "\x1b[0m"
 
 std::string     randomCreatures[15] = {
     "Jack Black", "Johnny Depp", "Barack Obama", "Zorg", "Ancient Dragon of Destruction",
@@ -7,40 +11,43 @@ std::string     randomCreatures[15] = {
     "Scaylion", "Deathclaw", "Smog", "Sauron"
 };
 
-void        testFrag(FragTrap &jack) {
+void        testFrag(void) {
+    FragTrap jack("Jack");
+
     std::string creature = randomCreatures[rand() % 15];
     jack.rangedAttack(creature);
     jack.meleeAttack(creature);
     jack.takeDamage(35);
     jack.takeDamage(35);
-    jack.takeDamage(35);
+    std::cout << RED BOLD"<FR4G-TP> Health status: " << jack.getName() << " has " << jack.getHp() << "hp!" RESET <<std::endl;
     jack.takeDamage(120);
-    jack.takeDamage(35);
+    std::cout << RED BOLD"<FR4G-TP> Health status: " << jack.getName() << " has " << jack.getHp() << "hp!" RESET <<std::endl;
     jack.beRepaired(80);
+    std::cout << RED BOLD"<FR4G-TP> Health status: " << jack.getName() << " has " << jack.getHp() << "hp!" RESET <<std::endl;
     jack.vaulthunter_dot_exe(creature);
 }
 
-void        testScav(ScavTrap &scav) {
+void        testScav(void) {
+    ScavTrap scav("Bob");
+
     std::string creature = randomCreatures[rand() % 15];
     scav.rangedAttack(creature);
     scav.meleeAttack(creature);
     scav.takeDamage(35);
     scav.takeDamage(35);
-    scav.takeDamage(35);
+    std::cout << PURPLE BOLD"<FR4G-TP> Health status: " << scav.getName() << " has " << scav.getHp() << "hp!" RESET <<std::endl;
     scav.takeDamage(120);
-    scav.takeDamage(35);
+    std::cout << PURPLE BOLD"<FR4G-TP> Health status: " << scav.getName() << " has " << scav.getHp() << "hp!" RESET <<std::endl;
     scav.beRepaired(80);
+    std::cout << PURPLE BOLD"<FR4G-TP> Health status: " << scav.getName() << " has " << scav.getHp() << "hp!" RESET <<std::endl;
     scav.challengeNewcomer(creature);
 }
 
 int         main() {
-    FragTrap jack("Jack");
-    ScavTrap scav("Bob");
-
     srand(time(0));
-    testFrag(jack);
+    testFrag();
 
     std::cout << "\n-----------------------\n" << std::endl;
 
-    testScav(scav);
+    testScav();
 }

@@ -33,6 +33,21 @@ ScavTrap::~ScavTrap(void) {
     std::cout << "<SC4G-TP> I'll stop talking when I'm dead!! ... Fuc-- <VERY LARGE EXPLOSION>" << std::endl;
 }
 
+/*-----------------------------OVERLOADING ---------------------------------------- */
+
+ScavTrap        &ScavTrap::operator=(const ScavTrap &r) {
+    this->_name = r._name;
+    this->_hp = r._hp;
+    this->_maxHp = r._maxHp;
+    this->_energyPoints = r._energyPoints;
+    this->_maxEp = r._maxEp;
+    this->_rangedDmg = r._rangedDmg;
+    this->_meleeDmg = r._meleeDmg;
+    this->_level = r._level;
+    this->_armor = r._armor;
+    return *this;
+}
+
 /* ----------------------------ATTACKS------------------------------------*/
 
 void            ScavTrap::rangedAttack(std::string const &target) {
@@ -76,4 +91,42 @@ void            ScavTrap::beRepaired(unsigned int amount) {
 
 void            ScavTrap::challengeNewcomer(std::string const &target) {
     std::cout << "<SC4G-TP> I challenge " << target << " to the \"" << randChallenge[rand() % 8] << "\" challenge! Good luck noob!" << std::endl;
+}
+
+/* -------------------------GET STATS---------------------------------- */
+
+std::string     ScavTrap::getName(void) {
+    return (this->_name);
+}
+
+unsigned int    ScavTrap::getHp(void) {
+    return (this->_hp);
+}
+
+unsigned int    ScavTrap::getMaxHp(void) {
+    return (this->_maxHp);
+}
+
+unsigned int    ScavTrap::getEp(void) {
+    return (this->_energyPoints);
+}
+
+unsigned int    ScavTrap::getMaxEp(void) {
+    return (this->_maxEp);
+}
+
+unsigned int    ScavTrap::getLevel(void) {
+    return (this->_level);
+}
+
+unsigned int    ScavTrap::getMeleeDmg(void) {
+    return (this->_meleeDmg);
+}
+
+unsigned int    ScavTrap::getRangeDmg(void) {
+    return (this->_rangedDmg);
+}
+
+unsigned int    ScavTrap::getArmor(void) {
+    return (this->_armor);
 }
