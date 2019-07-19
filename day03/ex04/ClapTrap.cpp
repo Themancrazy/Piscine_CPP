@@ -21,6 +21,10 @@ ClapTrap::ClapTrap(ClapTrap const &cpy) :
     << "I mean, I can't. We coulda gotten married and had gadgets together, but now, I'll never know." << std::endl;
 }
 
+ClapTrap::ClapTrap(void) {
+    std::cout << "<CL4G-TP> This is the basic constructor made just for you!" << std::endl;
+}
+
 ClapTrap::~ClapTrap(void) {
     std::cout << "<CL4G-TP> I'M DEAD I'M DEAD OHMYGOD I'M DEAD!" << std::endl;
 }

@@ -8,6 +8,7 @@ class ClapTrap {
         unsigned int maxEp, unsigned int level, unsigned int meleeDmg, unsigned int rangedDmg,
         unsigned int armor);
         ClapTrap(const ClapTrap &cpy);
+        ClapTrap(void);
         ~ClapTrap(void);
 
         ClapTrap        &operator=(const ClapTrap &r);
