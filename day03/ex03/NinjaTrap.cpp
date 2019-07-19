@@ -22,3 +22,15 @@ void                NinjaTrap::rangedAttack(std::string const &target) {
     std::cout << "<NI4G-TP> I'm watching you.. Ready to strike from the shadow.. <BOOM> (dealed " << this->_rangedDmg \
     << " dmg to " << target << ")" << std::endl;
 }
+
+void                NinjaTrap::meleeAttack(std::string const &target) {
+    std::cout << "<NI4G-TP> Eat my external hammer in YOUR FACE stupid " << target << \
+    "(dealed " << this->_meleeDmg << " dmg)" << std::endl;
+}
+
+/* ---------------------------------NINJA ATTACKS ---------------------------------*/
+
+void                NinjaTrap::ninjaShoebox(FragTrap &target) {
+    std::cout << "<NI4G-TP> Yeaahh let's open a vaulthunter's box for " << target << "! " \
+    << FragTrap::vaulthunter(target) << std::endl;
+}
