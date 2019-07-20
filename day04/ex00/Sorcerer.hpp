@@ -1,6 +1,8 @@
 #ifndef SORCERER_HPP
 #define SORCERER_HPP
+#include "Victim.hpp"
 #include <iostream>
+#include <fstream>
 
 class Sorcerer {
     public:
@@ -13,11 +15,16 @@ class Sorcerer {
         std::string     getName(void) const;
         std::string     getTitle(void) const;
 
+        void            polymorph(Victim const &target) const;
+
     protected:
         std::string     _name;
         std::string     _title;
+
     private:
         Sorcerer(void);
 };
+
+std::ostream    &operator<<(std::ostream &out, Sorcerer const &r);
 
 #endif
