@@ -2,10 +2,12 @@
 #include "FragTrap.hpp"
 #include "ClapTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 #define RED "\x1b[91m"
 #define BOLD "\x1b[1m"
-#define PURPLE "\x1b[94m"
+#define BLUE "\x1b[94m"
 #define YELLOW "\x1b[93m"
+#define PURPLE "\x1b[95m"
 #define RESET "\x1b[0m"
 
 std::string     randomCreatures[15] = {
@@ -38,11 +40,11 @@ void        testScav(void) {
     scav.meleeAttack(creature);
     scav.takeDamage(35);
     scav.takeDamage(35);
-    std::cout << PURPLE BOLD"<SC4G-TP> Health status: " << scav.getName() << " has " << scav.getHp() << "hp!" RESET <<std::endl;
+    std::cout << BLUE BOLD"<SC4G-TP> Health status: " << scav.getName() << " has " << scav.getHp() << "hp!" RESET <<std::endl;
     scav.takeDamage(120);
-    std::cout << PURPLE BOLD"<SC4G-TP> Health status: " << scav.getName() << " has " << scav.getHp() << "hp!" RESET <<std::endl;
+    std::cout << BLUE BOLD"<SC4G-TP> Health status: " << scav.getName() << " has " << scav.getHp() << "hp!" RESET <<std::endl;
     scav.beRepaired(80);
-    std::cout << PURPLE BOLD"<SC4G-TP> Health status: " << scav.getName() << " has " << scav.getHp() << "hp!" RESET <<std::endl;
+    std::cout << BLUE BOLD"<SC4G-TP> Health status: " << scav.getName() << " has " << scav.getHp() << "hp!" RESET <<std::endl;
     scav.challengeNewcomer(creature);
 }
 
@@ -63,6 +65,19 @@ void        testNinja(void) {
     ninja.ninjaShoebox(test);
 }
 
+void        testSuper(void) {
+    SuperTrap super("Thanos");
+    ScavTrap scav("TEST NAME");
+
+    std::string creature = randomCreatures[rand() % 15];
+    std::cout << PURPLE BOLD;
+    super.rangedAttack(creature);
+    super.meleeAttack(creature);
+    super.ninjaShoebox(scav);
+    super.vaulthunter_dot_exe("Iron-Man");
+    std::cout << RESET;
+}
+
 int         main() {
     srand(time(0));
     testFrag();
@@ -70,7 +85,12 @@ int         main() {
     std::cout << "\n-----------------------\n" << std::endl;
 
     testScav();
+    
     std::cout << "\n-----------------------\n" << std::endl;
 
     testNinja();
+    
+    std::cout << "\n-----------------------\n" << std::endl;
+
+    testSuper();
 }
