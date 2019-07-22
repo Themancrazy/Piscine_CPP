@@ -24,6 +24,7 @@ Bureaucrat                  &Bureaucrat::operator=(const Bureaucrat &r) {
 
 std::ostream            &operator<<(std::ostream &o, const Bureaucrat &r) {
     o << r.getName() << ", bureaucrat grade " << r.getGrade() << "." << std::endl;
+	return o;
 }
 
 /*------------------GET--------------- */
@@ -44,4 +45,18 @@ void                        Bureaucrat::setName(std::string name) {
 
 void                        Bureaucrat::setGrade(int grade) {
     this->_grade = grade;
+}
+
+/*------------------SET--------------- */
+
+void						Bureaucrat::GradeTooHighException::testGrade(void) {
+	if (parent.getGrade() < 1) {
+		throw std::exception();
+	}
+}
+
+void						Bureaucrat::GradeTooLowException::testGrade(void) {
+	if (parent.getGrade() > 150) {
+		throw std::exception();
+	}
 }

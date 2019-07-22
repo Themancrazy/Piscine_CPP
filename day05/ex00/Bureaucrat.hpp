@@ -16,16 +16,19 @@ class Bureaucrat {
         void                        setName(std::string name);
         void                        setGrade(int grade);
 
-        class GradeTooHighExceptiopn {
+        class GradeTooHighException {
             public:
-                if (getGrade() < 1) {
-                    throw std::exception();
-                }
+				GradeTooHighException(Bureaucrat& x): parent(x) {}
+                void				testGrade(void);
+			private:
+				Bureaucrat			&parent;
         };
         class GradeTooLowException {
-            if (getGrade() > 150) {
-                throw std::exception();
-            }
+            public:
+				GradeTooLowException(Bureaucrat& x): parent(x) {}
+                void				testGrade(void);
+			private:
+				Bureaucrat			&parent;
         };
 
     private:
