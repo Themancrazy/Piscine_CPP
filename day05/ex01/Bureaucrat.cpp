@@ -1,6 +1,9 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /*------------------CONST/DEST---------------- */
+
+Bureaucrat::Bureaucrat(void) {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
     if (grade < 1) {
@@ -70,5 +73,15 @@ void                        Bureaucrat::decrement(int n) {
     }
     else {
         this->setGrade(this->getGrade() + n);
+    }
+}
+
+void                        Bureaucrat::signForm(Form &contract) {
+    try {
+        contract.beSigned(*this);
+        std::cout << contract.getName() << " has been signed by " << this->_name << std::endl;
+    }
+    catch (std::exception &e) {
+        std::cout << e.what() << std::endl;
     }
 }

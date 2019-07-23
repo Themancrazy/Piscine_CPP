@@ -1,10 +1,14 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
+#include "Form.hpp"
 #include <iostream>
 #include <exception>
 
+class Form; 
+
 class Bureaucrat {
     public:
+        Bureaucrat(void);
         Bureaucrat(std::string name, int grade);
         Bureaucrat(const Bureaucrat &cpy);
         ~Bureaucrat(void);
@@ -17,20 +21,20 @@ class Bureaucrat {
         void                        setName(std::string name);
         void                        setGrade(int grade);
 
-        void                        signForm(void);
+        void                        signForm(Form &contract);
 
         struct GradeTooHighException : public std::exception
         {
             const char * what (void) const throw ()
             {
-                return ("TOO HIGH");
+                return ("Level of person can't be higher than 1.");
             }
         };
         struct GradeTooLowException : public std::exception
         {
             const char * what (void) const throw ()
             {
-                return ("TOO LOW");
+                return ("Level of person can't be lower than 150.");
             }
         };
 
