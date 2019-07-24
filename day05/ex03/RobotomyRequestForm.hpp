@@ -4,7 +4,7 @@
 #include "Intern.hpp"
 #include "Form.hpp"
 
-class RobotomyRequestForm : public Form, public Intern {
+class RobotomyRequestForm : public Form {
     public:
         RobotomyRequestForm(void);
         RobotomyRequestForm(const std::string target);

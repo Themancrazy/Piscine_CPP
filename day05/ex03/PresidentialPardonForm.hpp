@@ -3,7 +3,7 @@
 #include "Form.hpp"
 #include "Intern.hpp"
 
-class PresidentialPardonForm : public Form, public Intern {
+class PresidentialPardonForm : public Form {
     public:
         PresidentialPardonForm(void);
         PresidentialPardonForm(const std::string target);

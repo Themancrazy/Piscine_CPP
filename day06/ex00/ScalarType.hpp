@@ -7,10 +7,18 @@ class ScalarType {
         ScalarType(void);
         ScalarType(std::string type);
         ScalarType(const ScalarType &cpy);
-        ~ScalarType(void);
+        virtual ~ScalarType(void);
 
-        ScalarType              &ScalarType::operator=(const ScalarType &r);
-    
+        ScalarType              &operator=(const ScalarType &r);
+
+        struct FailedConvertion : public std::exception {
+            const char*     what() const throw();
+        };
+        operator                char(void);
+        operator                double(void);
+        operator                float(void);
+        operator                int(void);
+
     private:
         std::string             _originalValue;
 };

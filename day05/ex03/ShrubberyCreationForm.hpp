@@ -4,7 +4,7 @@
 #include "Form.hpp"
 #include "Intern.hpp"
 
-class ShrubberyCreationForm : public Form, public Intern {
+class ShrubberyCreationForm : public Form {
     public:
         ShrubberyCreationForm(void);
         ShrubberyCreationForm(const std::string target);

@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anjansse <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: anjansse <anjansse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/28 21:57:22 by anjansse          #+#    #+#              #
-#    Updated: 2019/07/15 19:16:33 by anjansse         ###   ########.fr        #
+#    Updated: 2019/07/23 18:26:55 by anjansse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= Zombie
-GENERAL		= main.cpp Zombie.cpp ZombieEvent.cpp
+GENERAL		= main.cpp ScalarType.cpp
 
 SRCS		= $(GENERAL)
 
