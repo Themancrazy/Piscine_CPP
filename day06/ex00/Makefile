@@ -6,11 +6,11 @@
 #    By: anjansse <anjansse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/28 21:57:22 by anjansse          #+#    #+#              #
-#    Updated: 2019/07/23 18:26:55 by anjansse         ###   ########.fr        #
+#    Updated: 2019/07/23 18:48:44 by anjansse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Zombie
+NAME		= convert
 GENERAL		= main.cpp ScalarType.cpp
 
 SRCS		= $(GENERAL)

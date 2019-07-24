@@ -1,13 +1,16 @@
 #include "ScalarType.hpp"
 #include <iostream>
+#include <iomanip>
 
 int               main(int ac, char **av)
 {
     (void)av;
     if (ac != 2) {
-        std::cout << "usage: <EXECUTABLE> <ARGUMENT>" << std::endl;
+        std::cout << "usage: ./convert <literal-value>" << std::endl;
+        return 0;
     }
     ScalarType conv(av[1]);
+    std::cout << std::setprecision(1) << std::fixed;
     std::cout << "char: ";
     try {
         char c = static_cast<char>(conv);

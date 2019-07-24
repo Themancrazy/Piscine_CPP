@@ -6,16 +6,16 @@
 #    By: anjansse <anjansse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/28 21:57:22 by anjansse          #+#    #+#              #
-#    Updated: 2019/07/19 23:10:19 by anjansse         ###   ########.fr        #
+#    Updated: 2019/07/23 18:48:44 by anjansse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= fallout
-GENERAL		= main.cpp AWeapon.cpp Character.cpp Enemy.cpp PlasmaRifle.cpp PowerFist.cpp RadScorpion.cpp SuperMutant.cpp
+NAME		= convert
+GENERAL		= main.cpp ScalarType.cpp
 
-SRCS		= $(addprefix src/, $(GENERAL))
+SRCS		= $(GENERAL)
 
-INCLUDES	= -I inc/
+INCLUDES	= -I.
 
 CC		= clang++
 
@@ -26,7 +26,6 @@ CFLAGS		= -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	@echo ""
 	@echo -n 'Compiling Program...'
 	@$(CC) $(CFLAGS) $(SRCS) $(INCLUDES) -o $(NAME)
 	@echo "\t\x1b[92m✓✓\x1b[0m\n"
